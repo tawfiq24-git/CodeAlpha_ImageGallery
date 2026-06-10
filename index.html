@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A premium, highly interactive and responsive image gallery showcasing custom digital artwork. Implements modern transitions, dynamic category filtering, dual-theme dark/light mode, and full-screen lightbox navigation.">
+    <title>AuraGallery — Premium Interactive Image Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for UI Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Theme Background Mesh -->
+    <div class="bg-mesh" aria-hidden="true"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-area">
+                <i class="fa-solid fa-wand-magic-sparkles logo-icon"></i>
+                <h1 class="logo-text">Aura<span>Gallery</span></h1>
+            </div>
+            
+            <p class="subtitle">An immersive showcase of high-fidelity AI-generated artwork, smooth transitions, and responsive aesthetics.</p>
+            
+            <div class="controls-area">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="control-btn" aria-label="Toggle Theme Mode" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Filters Section -->
+    <nav class="filter-nav" aria-label="Image category filters">
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all" id="btn-filter-all">
+                <i class="fa-solid fa-border-all"></i> All Works
+            </button>
+            <button class="filter-btn" data-filter="nature" id="btn-filter-nature">
+                <i class="fa-solid fa-tree"></i> Nature
+            </button>
+            <button class="filter-btn" data-filter="architecture" id="btn-filter-architecture">
+                <i class="fa-solid fa-building-columns"></i> Architecture
+            </button>
+            <button class="filter-btn" data-filter="abstract" id="btn-filter-abstract">
+                <i class="fa-solid fa-brush"></i> Abstract
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Gallery Section -->
+    <main class="gallery-section">
+        <div class="gallery-grid" id="gallery-grid">
+            
+            <!-- Card 1: Nature Forest -->
+            <article class="gallery-card" data-category="nature" data-index="0">
+                <div class="card-image-wrapper">
+                    <img src="images/nature_forest.png" alt="Misty pine forest at sunrise with light rays filtering through the trees" class="gallery-img" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="view-btn" aria-label="Expand image"><i class="fa-solid fa-expand"></i></span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="card-category">Nature</span>
+                    <h2 class="card-title">Misty Dawn Forest</h2>
+                    <p class="card-desc">An ethereal sunrise breaking through towering pine trees wrapped in morning fog.</p>
+                </div>
+            </article>
+
+            <!-- Card 2: Cyberpunk City -->
+            <article class="gallery-card" data-category="architecture" data-index="1">
+                <div class="card-image-wrapper">
+                    <img src="images/architecture_cyberpunk.png" alt="Futuristic cyberpunk street at night with glowing neon advertisements and flying vehicles" class="gallery-img" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="view-btn" aria-label="Expand image"><i class="fa-solid fa-expand"></i></span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="card-category">Architecture</span>
+                    <h2 class="card-title">Neo-Shinjuku Grid</h2>
+                    <p class="card-desc">Glowing holographic displays and rain-swept alleys in a futuristic neon-drenched metropolis.</p>
+                </div>
+            </article>
+
+            <!-- Card 3: Abstract Fluid -->
+            <article class="gallery-card" data-category="abstract" data-index="2">
+                <div class="card-image-wrapper">
+                    <img src="images/abstract_fluid.png" alt="Vibrant liquid acrylic fluid waves with gold veins" class="gallery-img" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="view-btn" aria-label="Expand image"><i class="fa-solid fa-expand"></i></span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="card-category">Abstract</span>
+                    <h2 class="card-title">Chroma Flow</h2>
+                    <p class="card-desc">A swirling mixture of vibrant liquid magenta, turquoise, and shimmering golden veins.</p>
+                </div>
+            </article>
+
+            <!-- Card 4: Nature Mountains -->
+            <article class="gallery-card" data-category="nature" data-index="3">
+                <div class="card-image-wrapper">
+                    <img src="images/nature_mountains.png" alt="Snow-capped mountain peak bathed in golden hour sunset glow" class="gallery-img" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="view-btn" aria-label="Expand image"><i class="fa-solid fa-expand"></i></span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="card-category">Nature</span>
+                    <h2 class="card-title">Alpenglow Summit</h2>
+                    <p class="card-desc">Majestic snow-draped peaks capturing the last warm rays of an alpine sunset.</p>
+                </div>
+            </article>
+
+            <!-- Card 5: Minimal Architecture -->
+            <article class="gallery-card" data-category="architecture" data-index="4">
+                <div class="card-image-wrapper">
+                    <img src="images/architecture_minimal.png" alt="Clean minimalist concrete facade with sharp geometric shadows" class="gallery-img" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="view-btn" aria-label="Expand image"><i class="fa-solid fa-expand"></i></span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="card-category">Architecture</span>
+                    <h2 class="card-title">Monolith Shadow</h2>
+                    <p class="card-desc">Clean, geometric raw concrete structures playing with light and deep architectural shadows.</p>
+                </div>
+            </article>
+
+            <!-- Card 6: Abstract Neon -->
+            <article class="gallery-card" data-category="abstract" data-index="5">
+                <div class="card-image-wrapper">
+                    <img src="images/abstract_neon.png" alt="Geometric neon outlines and synthwave abstract 3D forms" class="gallery-img" loading="lazy">
+                    <div class="card-overlay">
+                        <span class="view-btn" aria-label="Expand image"><i class="fa-solid fa-expand"></i></span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="card-category">Abstract</span>
+                    <h2 class="card-title">Synthwave Matrix</h2>
+                    <p class="card-desc">Futuristic 3D composition combining retro-neon wireframes and dark glassmorphic plates.</p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Lightbox Modal Overlay -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox"><i class="fa-solid fa-xmark"></i></button>
+        
+        <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous Image"><i class="fa-solid fa-chevron-left"></i></button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            </div>
+            
+            <div class="lightbox-info-panel">
+                <div class="info-top">
+                    <span class="lightbox-category" id="lightbox-category">Category</span>
+                    <span class="lightbox-counter" id="lightbox-counter">1 / 6</span>
+                </div>
+                <h3 class="lightbox-title" id="lightbox-title">Image Title</h3>
+                <p class="lightbox-desc" id="lightbox-desc">Detailed description goes here...</p>
+            </div>
+        </div>
+        
+        <button class="lightbox-nav next" id="lightbox-next" aria-label="Next Image"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">© 2026 AuraGallery. Crafted with premium HTML, CSS, and JS. AI Artwork generated via custom models.</p>
+    </footer>
+
+    <!-- JavaScript Bundle -->
+    <script src="script.js"></script>
+</body>
+</html>
